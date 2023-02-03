@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+    <title>RSVP form</title>
+  </head>
+  <body>
+    <form
+      action="#"
+      data-th-action="@{/new}"
+      data-th-object="${rsvp}"
+      method="post"
+    >
+      <p>
+        full name: <input type="text" data-th-field="*{fullName}" />
+        <!-- <br>
+        <span
+          class="error"
+          data-th-if="${#fields.hasErrors('fullName')}"
+          data-th-errors="*{fullName}"
+        > -->
+      </p>
+      <p>
+        email: <input type="text" data-th-field="*{email}" />
+        <!-- <br>
+        <span
+          class="error"
+          data-th-if="${#fields.hasErrors('email')}"
+          data-th-errors="*{email}"
+        > -->
+      </p>
+      <p>
+        phone: <input type="text" data-th-field="*{phone}" />
+        <!-- <br>
+        <span
+          class="error"
+          data-th-if="${#fields.hasErrors('phone')}"
+          data-th-errors="*{phone}"
+        > -->
+      </p>
+      <p>
+        confirmation date:
+        <input type="date" data-th-field="*{confirmationDate}" />
+        <!-- <br>
+        <span
+          class="error"
+          data-th-if="${#fields.hasErrors('confirmationDate')}"
+          data-th-errors="*{confirmationDate}"
+        > -->
+      </p>
+      <p>comments: <input type="text" data-th-field="*{comments}" /></p>
+      <p><input type="submit" value="Create" /></p>
+    </form>
+  </body>
+</html>
